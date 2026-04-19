@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Mextli Languages | Native Spanish & Japanese Tuition</title>
+  <!-- Preconnect to Google Fonts for better performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Google Fonts: Inter + Playfair Display for elegant contrast -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #F8F9FA;
+      color: #2C3E50;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* Color variables based on strategy */
+    :root {
+      --deep-blue: #1A2B4C;
+      --clean-white: #F8F9FA;
+      --warm-amber: #E67E22;
+      --calm-green: #2E7D32;
+      --charcoal: #2C3E50;
+      --border-light: #e2e8f0;
+      --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+    }
+
+    /* Typography */
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      color: var(--deep-blue);
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: var(--deep-blue);
+      border-left: 5px solid var(--warm-amber);
+      padding-left: 1rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: var(--deep-blue);
+    }
+
+    .section-subhead {
+      font-size: 1.2rem;
+      color: #4a5b6e;
+      margin-bottom: 2.5rem;
+      max-width: 720px;
+    }
+
+    /* Buttons & CTA */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: var(--warm-amber);
+      color: white;
+      font-weight: 600;
+      padding: 0.9rem 2rem;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .btn-primary:hover {
+      background-color: #c55a11;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px -5px rgba(230, 126, 34, 0.3);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      border: 1.5px solid var(--deep-blue);
+      color: var(--deep-blue);
+      padding: 0.7rem 1.5rem;
+      border-radius: 40px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .btn-outline:hover {
+      background: var(--deep-blue);
+      color: white;
+    }
+
+    /* Header / Nav */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 0;
+      flex-wrap: wrap;
+      gap: 1rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--deep-blue);
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--warm-amber);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--charcoal);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--warm-amber);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 4rem 0 3rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-badge {
+      background: #e9ecef;
+      display: inline-block;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--deep-blue);
+      margin-bottom: 1rem;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 1.8rem;
+      margin-top: 2rem;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-number {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--warm-amber);
+    }
+
+    /* Cards grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 2rem 1.5rem;
+      border-radius: 24px;
+      box-shadow: var(--card-shadow);
+      transition: transform 0.2s;
+      border: 1px solid var(--border-light);
+    }
+
+    .feature-card i {
+      font-size: 2.2rem;
+      color: var(--warm-amber);
+      margin-bottom: 1.2rem;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Pricing tables */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .pricing-card {
+      background: white;
+      border-radius: 28px;
+      padding: 1.8rem;
+      box-shadow: var(--card-shadow);
+      border: 1px solid var(--border-light);
+      transition: all 0.2s;
+    }
+
+    .pricing-card.highlight {
+      border-top: 5px solid var(--warm-amber);
+      background: #fffdf9;
+    }
+
+    .price {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--deep-blue);
+      margin: 1rem 0 0.5rem;
+    }
+
+    .price small {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    .pricing-features {
+      list-style: none;
+      margin: 1.5rem 0;
+    }
+
+    .pricing-features li {
+      margin-bottom: 0.7rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .pricing-features i.fa-check {
+      color: var(--calm-green);
+      font-size: 0.9rem;
+    }
+
+    /* Policy section */
+    .policy-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 2rem 0;
+      justify-content: space-between;
+    }
+
+    .policy-card {
+      background: white;
+      flex: 1;
+      min-width: 200px;
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    .refund-note {
+      background: #eef2f5;
+      border-left: 4px solid var(--calm-green);
+      padding: 1rem;
+      border-radius: 16px;
+      margin-top: 1rem;
+    }
+
+    /* Language switcher (visual only, static demo) */
+    .lang-switch {
+      display: flex;
+      gap: 0.5rem;
+      background: #f1f3f5;
+      padding: 0.3rem;
+      border-radius: 40px;
+    }
+
+    .lang-btn {
+      background: none;
+      border: none;
+      padding: 0.3rem 0.9rem;
+      border-radius: 30px;
+      font-weight: 500;
+      cursor: pointer;
+      font-size: 0.8rem;
+      transition: 0.1s;
+    }
+
+    .lang-btn.active {
+      background: var(--deep-blue);
+      color: white;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--deep-blue);
+      color: #cbd5e1;
+      margin-top: 4rem;
+      padding: 2.5rem 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .footer-logo {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: white;
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* responsive */
+    @media (max-width: 768px) {
+      h1 { font-size: 2.5rem; }
+      h2 { font-size: 1.8rem; }
+      .container { padding: 0 24px; }
+      .navbar { flex-direction: column; align-items: flex-start; }
+      .hero { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="#" class="logo">Mextli <span>Languages</span></a>
+    <div class="nav-links">
+      <a href="#packages">Planes</a>
+      <a href="#policy">Políticas</a>
+      <a href="#contact">Contacto</a>
+      <!-- Static language indicator (just style) -->
+      <div class="lang-switch">
+        <button class="lang-btn active">EN</button>
+        <button class="lang-btn">RU</button>
+        <button class="lang-btn">ES</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">🇲🇽 🇯🇵 Native Expert · 75‑min deep sessions</div>
+      <h1>Master a new language with a native expert</h1>
+      <p style="font-size: 1.2rem; margin-bottom: 1.8rem; color: #3a4a5f;">Personalized Spanish & Japanese tuition from Mexico to Russia. Real fluency, clear structure, and respect for your time.</p>
+      <a href="#packages" class="btn-primary">Start your first lesson →</a>
+      <div class="hero-stats">
+        <div class="stat-item"><span class="stat-number">800+</span> <span>classes taught</span></div>
+        <div class="stat-item"><span class="stat-number">75</span> <span>min deep focus</span></div>
+        <div class="stat-item"><span class="stat-number">24/7</span> <span>flexible scheduling</span></div>
+      </div>
+    </div>
+    <div style="flex:0.8; background: #e9ecef; border-radius: 32px; padding: 1rem; text-align: center;">
+      <i class="fas fa-language" style="font-size: 5rem; color: var(--warm-amber); opacity: 0.7;"></i>
+      <p style="margin-top: 1rem; font-weight: 500;">Español · 日本語</p>
+    </div>
+  </div>
+
+  <!-- What I offer section (3 cards) -->
+  <div style="margin: 3rem 0;">
+    <h2>Professional language instruction for committed learners</h2>
+    <div class="cards-grid">
+      <div class="feature-card"><i class="fas fa-globe-americas"></i><h3>Native expertise</h3><p>Learn Spanish from a native of Mexico and Japanese with structured, high‑quality methods.</p></div>
+      <div class="feature-card"><i class="fas fa-hourglass-half"></i><h3>75‑min deep focus</h3><p>Extended sessions for deeper learning, real practice, and retention — not just a standard hour.</p></div>
+      <div class="feature-card"><i class="fas fa-handshake"></i><h3>Clear policies for respect</h3><p>Fair cancellation and booking policies that protect your time and mine.</p></div>
+    </div>
+  </div>
+
+  <!-- Pricing & Packages section -->
+  <div id="packages" style="margin: 4rem 0;">
+    <h2>Simple, fair pricing for results</h2>
+    <p class="section-subhead">75‑minute sessions. Choose the commitment that fits your rhythm.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card"><h3>Pay per class</h3><div class="price">1000 ₽</div><p>per session · after class</p><ul class="pricing-features"><li><i class="fas fa-check"></i> No commitment</li><li><i class="fas fa-check"></i> Pay after lesson</li><li>Schedule subject to my availability</li></ul></div>
+      <div class="pricing-card"><h3>Single class (reserve)</h3><div class="price">850 ₽</div><p>per session · pay before</p><ul class="pricing-features"><li><i class="fas fa-check"></i> Guaranteed time slot</li><li><i class="fas fa-check"></i> Valid 1 week</li><li>Best for one‑off lessons</li></ul></div>
+      <div class="pricing-card"><h3>4‑class pack</h3><div class="price">800 ₽<small>/session</small></div><p>Total 3200 ₽ · valid 3 weeks</p><ul class="pricing-features"><li><i class="fas fa-check"></i> Save 200 ₽ vs. single</li><li>Ideal for weekly learners</li></ul></div>
+      <div class="pricing-card"><h3>8‑class pack</h3><div class="price">750 ₽<small>/session</small></div><p>Total 6000 ₽ · valid 8 weeks</p><ul class="pricing-features"><li><i class="fas fa-check"></i> Save 800 ₽</li><li>Consistent progress</li></ul></div>
+      <div class="pricing-card highlight"><h3>Intensive 9+</h3><div class="price">700 ₽<small>/session</small></div><p>>2 classes/week · 5‑week prepay</p><ul class="pricing-features"><li><i class="fas fa-check"></i> Maximum savings</li><li><i class="fas fa-check"></i> Fast results guaranteed</li></ul></div>
+    </div>
+  </div>
+
+  <!-- Cancellation & Refund policy (core) -->
+  <div id="policy" style="margin: 3rem 0; background: white; border-radius: 32px; padding: 2rem; box-shadow: var(--card-shadow);">
+    <h2>⏱️ Respecting our time together</h2>
+    <div class="policy-grid">
+      <div class="policy-card"><i class="fas fa-calendar-check" style="font-size: 2rem; color: var(--calm-green);"></i><h3>✅ 24+ hours notice</h3><p>Reschedule any class for free — within your pack validity.</p></div>
+      <div class="policy-card"><i class="fas fa-exclamation-triangle" style="font-size: 2rem; color: var(--warm-amber);"></i><h3>❌ Less than 24 hours</h3><p>The class is lost and deducted from your pack.</p></div>
+      <div class="policy-card"><i class="fas fa-door-closed" style="font-size: 2rem; color: #c0392b;"></i><h3>🚫 No Show</h3><p>Class is fully charged / deducted. No exceptions.</p></div>
+    </div>
+    <div class="refund-note">
+      <i class="fas fa-receipt"></i> <strong>Refund policy (very clear):</strong> Full refund only if <strong>I</strong> cancel and we can't reschedule within 7 days. Partial refund (50% of unused classes) if you cancel a pack — covers administrative & time loss. No refunds for last‑minute cancellations or no‑shows.
+    </div>
+  </div>
+
+  <!-- Extra transparency: sample student timeline (just a bonus) -->
+  <div style="margin: 2rem 0; background: #eef2fa; border-radius: 28px; padding: 1.5rem;">
+    <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; justify-content: space-between;">
+      <div><i class="fas fa-clock" style="color: var(--deep-blue); font-size: 1.6rem;"></i> <strong>Your time matters:</strong> all packs start from first scheduled date after payment.</div>
+      <a href="#contact" class="btn-outline">Book a trial →</a>
+    </div>
+  </div>
+
+  <!-- Japanese + Spanish teaching emphasis -->
+  <div style="margin: 3rem 0; text-align: center;">
+    <h2>🇲🇽 Español · 日本語 Japanese</h2>
+    <p style="max-width: 600px; margin: 1rem auto;">Native Mexican Spanish teacher with structured Japanese curriculum. All levels welcome — from complete beginners to advanced conversation.</p>
+  </div>
+
+  <!-- Contact / CTA final -->
+  <div id="contact" style="background: var(--deep-blue); color: white; border-radius: 32px; padding: 2.5rem 2rem; margin: 3rem 0; text-align: center;">
+    <h2 style="color: white; border-left-color: var(--warm-amber);">Ready to start your fluency journey?</h2>
+    <p style="margin-bottom: 2rem; font-size: 1.1rem;">Write to me on Telegram or email — we’ll arrange your first 75‑min session.</p>
+    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+      <a href="#" style="background: white; color: var(--deep-blue); padding: 0.7rem 2rem; border-radius: 40px; text-decoration: none; font-weight: 600;"><i class="fab fa-telegram"></i> Telegram</a>
+      <a href="#" style="background: transparent; border: 1px solid white; color: white; padding: 0.7rem 2rem; border-radius: 40px; text-decoration: none;"><i class="fas fa-envelope"></i> mextli.languages@example.com</a>
+    </div>
+    <p style="margin-top: 2rem; font-size: 0.85rem; opacity: 0.8;">📍 Based in Krasnodar · Online worldwide</p>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div><div class="footer-logo">Mextli <span style="color: var(--warm-amber);">Languages</span></div><p style="margin-top: 0.5rem;">Native Spanish & Japanese · 75‑min deep learning</p></div>
+      <div><strong>Policies</strong><br>📅 24h cancellation policy<br>🔁 50% refund on unused classes<br>⚡ Respect & transparency</div>
+      <div><strong>Languages</strong><br>🇲🇽 Español<br>🇯🇵 日本語<br>🇬🇧 English support</div>
+    </div>
+    <hr style="margin: 2rem 0 1rem; border-color: #2c3f5f;">
+    <p style="text-align: center; font-size: 0.8rem;">© 2026 Mextli Languages — committed to excellence in language education. Based in Krasnodar, teaching globally.</p>
+  </div>
+</footer>
+
+<!-- small interaction: language switcher demo (visual only, not actual translation) -->
+<script>
+  // just a playful console message and demo of language buttons (static demo)
+  const langBtns = document.querySelectorAll('.lang-btn');
+  langBtns.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      langBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      // you can replace with actual i18n later, but for now a subtle reminder
+      console.log(`Language demo: ${this.innerText} — you can extend with dynamic translation later.`);
+    });
+  });
+</script>
+</body>
+</html>
